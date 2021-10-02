@@ -78,4 +78,45 @@ $(function (){
             }
         })
     })
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    $(function() {
+        $('form').submit(function() {
+            $('#result').text(JSON.stringify($('form').serializeObject()));
+            let result = JSON.stringify($('form').serializeObject());
+            console.log(result);
+
+            $.ajax
+            ({
+                type: "POST",
+                //the url where you want to sent the userName and password to
+                url: 'https://kdhackapi20211002024226.azurewebsites.net/api/dogs/',
+                dataType: 'json',
+                async: true,
+                //json object to sent to the authentication url
+                data: result,
+                success: function () {
+
+                    alert("Thanks!");
+                }
+            })
+
+            return false;
+        });
+    });
 })

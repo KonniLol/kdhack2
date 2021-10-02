@@ -31,7 +31,7 @@
     <section id="ticket-order" class="ticket-order">
         <div class="container">
             <h2 id="order-title" class="title-2 hidden_vis animate__animated">Найди подходящих родителей!</h2>
-            <form method="post" action="https://kdhackapi20211002024226.azurewebsites.net/api/dogs" class="order" id="form">
+            <form action="" method="post" class="order" id="form">
                 <h2 class="visually-hidden">Введите данные желанного пса</h2>
                 <br>
                 <br>
@@ -55,7 +55,8 @@
                 </select>
                 <button class="btn btn-form" type="submit">Search</button>
             </form>
-            <p class="result"></p>
+            <pre id="result">
+            </pre>
         </div>
     </section>
     <footer id="footer" class="footer">
@@ -67,26 +68,10 @@
     </footer>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
-<!--    <script>-->
-<!--        const url = 'https://kdhackapi20211002024226.azurewebsites.net/api/dogs';-->
-<!--        const data = { iterations: document.querySelector('#iterations'),-->
-<!--                        height: document.querySelector('#height'),-->
-<!--                        weight: document.querySelector('#weight'),-->
-<!--                        trainability: document.querySelector('#trainability')};-->
 
-<!--        try {-->
-<!--            const response = await fetch(url, {-->
-<!--                method: 'POST', // или 'PUT'-->
-<!--                body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!-->
-<!--                headers: {-->
-<!--                    'Content-Type': 'application/json'-->
-<!--                }-->
-<!--            });-->
-<!--            const json = await response.json();-->
-<!--            console.log('Успех:', JSON.stringify(json));-->
-<!--        } catch (error) {-->
-<!--            console.error('Ошибка:', error);-->
-<!--        }-->
-<!--    </script>-->
+    <script type="text/javascript">
+
+    </script>
+
 </body>
 </html>
