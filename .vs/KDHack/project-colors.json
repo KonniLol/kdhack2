@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0a2b0837-6bc7-4bf8-9ced-c449e8eedb42": {
+      "ProjectGuid": "0a2b0837-6bc7-4bf8-9ced-c449e8eedb42",
+      "DisplayName": "KDHack.Api",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,106 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "KDHack.Api",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Dogs": {
+      "post": {
+        "tags": [
+          "Dogs"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DogHttpPostRequst"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Dogs"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "interations",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "height",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "weight",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "query",
+            "name": "trainability",
+            "type": "number",
+            "format": "double"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DogHttpPostRequst": {
+      "type": "object",
+      "properties": {
+        "interations": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "trainability": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
