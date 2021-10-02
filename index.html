@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>На море с WEYUP</title>
+    <title>Найди ротителей</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.jpg"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -30,15 +31,15 @@
     <section id="ticket-order" class="ticket-order">
         <div class="container">
             <h2 id="order-title" class="title-2 hidden_vis animate__animated">Найди подходящих родителей!</h2>
-            <form method="post" class="order" id="form">
+            <form method="post" action="https://kdhackapi20211002024226.azurewebsites.net/api/dogs" class="order" id="form">
                 <h2 class="visually-hidden">Введите данные желанного пса</h2>
                 <br>
                 <br>
                 <label>Поколения:</label>
-                <div class="mb-3"><input class="input in_r hidden_vis animate__animated" type="number" name="iterations" placeholder="Поколения"></div>
-                <div class="mb-3"><input class="input in_r hidden_vis animate__animated" type="number" name="height" placeholder="height"></div>
-                <div class="mb-3"><input class="input in_r hidden_vis animate__animated" type="number" name="weight" placeholder="weight"></div>
-                <label for="trainability">Trainability: </label>
+                <div class="mb-3"><input form="form" class="input in_r hidden_vis animate__animated" id="iterations" type="number" name="iterations" placeholder="Поколения"></div>
+                <div class="mb-3"><input form="form" class="input in_r hidden_vis animate__animated" id="height" type="number" name='height' placeholder="Рост"></div>
+                <div class="mb-3"><input form="form" class="input in_r hidden_vis animate__animated" id="weight" type="number" name="weight" placeholder="Вес"></div>
+                <label for="trainability">Дрессируемость: </label>
                 <select name="trainability" aria-label="Trainability:" class="input in_r hidden_vis animate__animated" id="trainability" form="form">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -54,6 +55,7 @@
                 </select>
                 <button class="btn btn-form" type="submit">Search</button>
             </form>
+            <p class="result"></p>
         </div>
     </section>
     <footer id="footer" class="footer">
@@ -65,5 +67,26 @@
     </footer>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
+<!--    <script>-->
+<!--        const url = 'https://kdhackapi20211002024226.azurewebsites.net/api/dogs';-->
+<!--        const data = { iterations: document.querySelector('#iterations'),-->
+<!--                        height: document.querySelector('#height'),-->
+<!--                        weight: document.querySelector('#weight'),-->
+<!--                        trainability: document.querySelector('#trainability')};-->
+
+<!--        try {-->
+<!--            const response = await fetch(url, {-->
+<!--                method: 'POST', // или 'PUT'-->
+<!--                body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!-->
+<!--                headers: {-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                }-->
+<!--            });-->
+<!--            const json = await response.json();-->
+<!--            console.log('Успех:', JSON.stringify(json));-->
+<!--        } catch (error) {-->
+<!--            console.error('Ошибка:', error);-->
+<!--        }-->
+<!--    </script>-->
 </body>
 </html>
