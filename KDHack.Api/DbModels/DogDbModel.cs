@@ -7,13 +7,17 @@ namespace KDHack.Api.DbModels
     {
         [BsonId]
         public ObjectId Id { get; set; }
-        
+
+        [BsonElement("name")]
         public string Name { get; set; }
 
+        [BsonElement("height")]
         public int Height { get; set; }
 
+        [BsonElement("weight")]
         public int Weight { get; set; }
 
+        [BsonElement("trainability")]
         public int Trainability { get; set; }
     }
 }
